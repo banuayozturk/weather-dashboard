@@ -32,8 +32,8 @@ var saveSearch = function(){
 
 //Gets Weather Data
 var getWeather = function(city){
-    var apiKey = "7b11e7aede6db92ad65062023e931bbb"
-    var apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=${apiKey}`
+    var apiKey = "7b11e7aede6db92ad65062023e931bbb";
+    var apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=${apiKey}`;
 
     fetch(apiURL)
     .then(function(response){
@@ -58,7 +58,7 @@ var displayWeather = function(weather, searchCity){
    citySearchInputEl.appendChild(weatherIcon);
 
    var temperatureEl = document.createElement("span");
-   temperatureEl.textContent = "Temperature: " + weather.main.temp + " °F"
+   temperatureEl.textContent = "Temperature: " + weather.main.temp + " °F";
    temperatureEl.classList = "list-group-item";
    weatherContainerEl.appendChild(temperatureEl);
   
@@ -79,8 +79,8 @@ var displayWeather = function(weather, searchCity){
 
 //Gets UV Data
 var getUvIndex = function(lat,lon){
-    var apiKey = "7b11e7aede6db92ad65062023e931bbb"
-    var apiURL = `https://api.openweathermap.org/data/2.5/uvi?appid=${apiKey}&lat=${lat}&lon=${lon}`
+    var apiKey = "7b11e7aede6db92ad65062023e931bbb";
+    var apiURL = `https://api.openweathermap.org/data/2.5/uvi?appid=${apiKey}&lat=${lat}&lon=${lon}`;
     fetch(apiURL)
     .then(function(response){
         response.json().then(function(data){
@@ -111,10 +111,10 @@ var displayUvIndex = function(index){
     };   
 }
 
-// Gets Weekdays Data
+// Gets Weekday Data
 var getWeekdays = function(city){
-    var apiKey = "7b11e7aede6db92ad65062023e931bbb"
-    var apiURL = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=imperial&appid=${apiKey}`
+    var apiKey = "7b11e7aede6db92ad65062023e931bbb";
+    var apiURL = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=imperial&appid=${apiKey}`;
 
     fetch(apiURL)
     .then(function(response){
