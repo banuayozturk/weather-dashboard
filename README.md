@@ -1,6 +1,8 @@
 # weather-dashboard 
 
-## Deployed Application: https://banuayozturk.github.io/weather-dashboard/## Description: 
+## Deployed Application: https://banuayozturk.github.io/weather-dashboard/
+
+## Description: 
 
 Weather-dashboard is an application which allows the user to search for weather conditions. User enters the city of the name and current and future conditions for the city appears on the screen. In my project, these conditions are  temperature, uv index, humidity, wind-speed, icon represantation of weather and the date.
 
