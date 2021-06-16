@@ -18,10 +18,6 @@ body {
     background-color:	#D3D3D3;
 }
 
-.list-group-item{
-    line-height: 0.5rem;
-    border: none;
-}
 .card-body{
     flex:auto
 }
@@ -44,10 +40,15 @@ span.favorable{
 }
 
 .border {
- border: 2px solid gray;
+ border: 0px;
 
 }
 
+.p-2{
+    margin-bottom: 10px;
+}
+
+//ID Selectors
 #fiveday-container{
     flex-wrap: wrap;
 }

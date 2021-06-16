@@ -18,11 +18,12 @@ var formSubmit = function(event){
         getWeekdays(city);
         cities.unshift({city});
         cityInputEl.value = "";
+        saveSearch();
+        pastSearch(city);
     } else{
         alert("Please enter a City");
     }
-    saveSearch();
-    pastSearch(city);
+    
 }
 
 //Stores Info To Local Storage
@@ -48,7 +49,7 @@ var displayWeather = function(weather, searchCity){
    
    weatherContainerEl.textContent= "";  
    citySearchInputEl.textContent=searchCity;
- 
+   
    var currentDate = document.createElement("span")
    currentDate.textContent=" (" + moment(weather.dt.value).format("MMM D, YYYY") + ") ";
    citySearchInputEl.appendChild(currentDate);
@@ -130,7 +131,7 @@ var displayWeekdays = function(weather){
     forecastTitle.textContent = "5-Day Forecast:";
 
     var forecast = weather.list;
-        for(var i=5; i < forecast.length; i=i+8){
+       for(var i=5; i < forecast.length; i=i+8){
        var dailyForecast = forecast[i];
         
        
@@ -149,18 +150,18 @@ var displayWeekdays = function(weather){
        
        var forecastTempEl=document.createElement("span");
        forecastTempEl.classList = "card-body text-center";
-       forecastTempEl.textContent = dailyForecast.main.temp + " °F";
+       forecastTempEl.textContent = "Temp: " + dailyForecast.main.temp + " °F";
        forecastEl.appendChild(forecastTempEl);
 
        var forecastHumEl=document.createElement("span");
        forecastHumEl.classList = "card-body text-center";
-       forecastHumEl.textContent = dailyForecast.main.humidity + "  %";
+       forecastHumEl.textContent = "Humidity: " + dailyForecast.main.humidity + "  %";
        forecastEl.appendChild(forecastHumEl);
        forecastContainerEl.appendChild(forecastEl);
 
        var forecastWindEl=document.createElement("span");
        forecastWindEl.classList = "card-body text-center";
-       forecastWindEl.textContent = dailyForecast.wind.speed + " MPH";
+       forecastWindEl.textContent = "Wind: " + dailyForecast.wind.speed + " MPH";
        forecastEl.appendChild(forecastWindEl);
        
     }
