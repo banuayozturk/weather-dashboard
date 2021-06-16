@@ -157,6 +157,12 @@ var displayWeekdays = function(weather){
        forecastHumEl.textContent = dailyForecast.main.humidity + "  %";
        forecastEl.appendChild(forecastHumEl);
        forecastContainerEl.appendChild(forecastEl);
+
+       var forecastWindEl=document.createElement("span");
+       forecastWindEl.classList = "card-body text-center";
+       forecastWindEl.textContent = dailyForecast.wind.speed + " MPH";
+       forecastEl.appendChild(forecastWindEl);
+       
     }
 
 }
@@ -165,7 +171,7 @@ var pastSearch = function(pastSearch){
  
     pastSearchEl = document.createElement("button");
     pastSearchEl.textContent = pastSearch;
-    pastSearchEl.classList = "d-flex w-100 btn-light border p-2";
+    pastSearchEl.classList = "d-flex w-100 btn-light border p-2 btn btn-primary";
     pastSearchEl.setAttribute("data-city",pastSearch);
     pastSearchEl.setAttribute("type", "submit");
     pastSearchButtonEl.prepend(pastSearchEl);
